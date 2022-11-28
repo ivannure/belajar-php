@@ -1,12 +1,15 @@
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "fakultas";
 
-$namaSaya = "Ivan Nur Efendi";
-$umurSaya = 20;
-$umurAdek = 10;
-$selisihUmur = $umurSaya - $umurAdek;
+// Create connection
+$conn = new mysqli($servername, $username, $password ,$dbname);
 
-echo "Belajar PHP Dasar 1 <br>";
-echo "Nama saya <strong>$namaSaya</strong>, saya berusia <strong>$umurSaya</strong> tahun. <br>";
-echo "Selisih umur saya dengan adek saya adalah = $selisihUmur tahun.";
-
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
 ?>
